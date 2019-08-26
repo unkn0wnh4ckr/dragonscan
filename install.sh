@@ -9,6 +9,7 @@ apt install aircrack-ng -y
 apt install netdiscover -y
 apt install nmap -y
 apt install curl -y
+pip install --update requests
 cd /root/dragonscan/script && pyinstaller --onefile dragonscan.py
 cd /root/dragonscan/script && pyinstaller --onefile dragonupdate.py
 cp -fr /root/dragonscan/script/dist/dragonscan /bin
