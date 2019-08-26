@@ -7,6 +7,8 @@ dragonscan is a information gathering tool coded in python cloning in /root/ fol
 
 `cd dragonscan`
 
+`chmod +x install.sh`
+
 `./install.sh`
 
 # RUN
