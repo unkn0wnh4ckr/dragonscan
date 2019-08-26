@@ -14,6 +14,6 @@ cd /root/dragonscan/script && pyinstaller --onefile dragonscan.py
 cd /root/dragonscan/script && pyinstaller --onefile dragonupdate.py
 cp -fr /root/dragonscan/script/dist/dragonscan /bin
 cp -fr /root/dragonscan/script/dist/dragonupdate /bin
-printf "[DONE]\n"
+printf "\n[DONE]\n"
 printf 'type "dragonupdate" anywhere in your terminal to update the script\n'
 printf 'type "dragonscan" anywhere in your terminal to run the script\n'
