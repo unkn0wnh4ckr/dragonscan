@@ -61,7 +61,7 @@ _#/|##########/\######(                                        )######/\########
 `  |/  V  V  `   V  \#\|                                      |/#/  V   '  V  V  \|  '
    `   `  `      `   / |                                      | \   '      '  '   '\033[0m
 
-\033[1mINFO GATHERING:\033[0m
+\033[1mDRAGONSCAN HELP:\033[0m
   |\033[32mCOMMAND\033[0m|     |\033[32mUSAGE\033[0m|                        [\033[32mDESCRIPTION\033[0m]
 
     -pts,    [-pts target]                  simple nmap portscan
@@ -81,14 +81,18 @@ _#/|##########/\######(                                        )######/\########
     -dnsup,  [-dnsup target]                dns-lookup
 
     -src,    [-src target]                  get a hosts source code
-             
-\033[1mLAN INFO GATHERING:\033[0m
 
-    -dd,     [-dd]                  scan for devices on your network
+    -dd,     [-dd]                          scan for devices on your network
 
-    -nd,     [-nd]                  scan for networks around you
+    -nd,     [-nd]                          scan for networks around you
 
-    -becap,  [-becap]               run the mitm tool bettercap
+    -becap,  [-becap]                       run the mitm tool bettercap
+                                                                                                 
+    -waf     [-waf target]                  web application firewall scanner
+
+    -dirb    [-dirb target]                 run a directory bruteforce on a host (\033[33minclude http:// or https://\033[0m)
+
+    -ssls    [-ssls target]                 run a ssl scan
 """
 
 if sys.argv[1] == "-pts":
@@ -156,3 +160,12 @@ if sys.argv[1] == "-src":
 		ay = 'curl {0} >> /root/{1}.txt'.format(sys.argv[2],sys.argv[2])
 		os.system(ay)
 		print Y+"\nfile saved > /root/{0}.txt\033[0m".format(sys.argv[2])
+
+if sys.argv[1] == "-waf":
+	os.system("wafw00f {0}".format(sys.argv[2]))
+
+if sys.argv[1] == "-dirb":
+	os.system("dirb {0}".format(sys.argv[2]))
+
+if sys.argv[1] == "-ssls":
+	os.system("sslscan {0}".format(sys.argv[2]))
